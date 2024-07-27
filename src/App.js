@@ -5,20 +5,24 @@ import Main from './components/shared/Main'
 import './App.css'
 
 function App() {
-    const [titles, setTitles] = useState([])
+    const [topics, setTopics] = useState([])
     useEffect(() => {
-        async function fetchTitles() {
-            const titles = await DataService.getTitles()
-            setTitles(titles)
+        async function fetchTopics() {
+            const topics = await DataService.getTopics()
+            setTopics(topics)
         }
-        fetchTitles()
+        fetchTopics()
     }, [])
 
+    async function fetchPicsList(topicName) {
+        const picsList = await DataService.getPicsList(topicName)
+        console.log(picsList)
+    }
 
     return (
         <div className='app'>
             <Header/>
-            <Main titles={titles}/>
+            <Main topics={topics} getPicsList={fetchPicsList}/>
         </div>
     )
 }

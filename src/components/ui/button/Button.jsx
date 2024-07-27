@@ -1,8 +1,8 @@
 import cl from './Button.module.css'
 
-function Button({children}) {
+function Button({children, onClick}) {
     return (
-        <button className={cl.button}>
+        <button onClick={onClick} className={cl.button}>
             {children}
         </button>
     )

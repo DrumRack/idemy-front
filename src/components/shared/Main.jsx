@@ -1,10 +1,13 @@
 import Button from '../ui/button/Button'
 
-function Main({titles}) {
+function Main({topics, getPicsList}) {
     return (
         <main>
             <nav>
-                {titles.map(title => <Button key={title}>{title}</Button>)}
+                {topics.map(topic =>
+                <Button onClick={() => getPicsList(topic)} key={topic}>
+                    {topic}
+                </Button>)}
             </nav>
             <div className='content'>TEST</div>
         </main>
