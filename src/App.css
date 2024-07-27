@@ -15,5 +15,29 @@
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
+    border-bottom: solid 1px;
+}
+
+.header_btns {
+    display: flex;
+    justify-content: space-between;
+    width: 19%;
+}
+
+main {
+    display: flex;
+    margin-top: 25px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    background-color: red;
+    width: 100%;
 }

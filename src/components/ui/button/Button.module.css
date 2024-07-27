@@ -5,3 +5,7 @@
     background: transparent;
     cursor: pointer;
 }
+
+.button:hover {
+    background: rgba(0, 128, 128, .15);
+}
