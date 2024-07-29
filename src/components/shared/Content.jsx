@@ -1,6 +1,6 @@
 import Button from '../ui/button/Button'
 
-function Main({topics, getPicLinks, picsLinks}) {
+function Content({topics, getPicLinks, picsLinks}) {
     return (
         <main>
             {picsLinks.length
@@ -25,4 +25,4 @@ function Main({topics, getPicLinks, picsLinks}) {
     )
 }
 
-export default Main
+export default Content

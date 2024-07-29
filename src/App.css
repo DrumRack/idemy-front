@@ -16,6 +16,7 @@
 
 header {
     display: flex;
+    width: 100vw;
     justify-content: space-between;
     padding: 20px;
     border-bottom: solid 1px;
@@ -24,7 +25,7 @@ header {
 .header_btns {
     display: flex;
     justify-content: space-between;
-    width: 19.4%;
+    width: 16vw;
 }
 
 main {

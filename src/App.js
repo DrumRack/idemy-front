@@ -1,31 +1,16 @@
-import {useEffect, useState} from 'react'
-import DataService from './API/DataService'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './components/shared/Header'
-import Main from './components/shared/Main'
+import Main from './pages/Main'
 import './App.css'
 
 function App() {
-    const [topics, setTopics] = useState([])
-    const [picsLinks, setPicLinks] = useState([])
-    useEffect(() => {
-        async function fetchTopics() {
-            const topics = await DataService.getTopics()
-            setTopics(topics)
-        }
-        fetchTopics()
-    }, [])
-
-    async function fetchPicLinks(topicName) {
-        const picsLinks = await DataService.getPicLinks(topicName)
-        setPicLinks(picsLinks)
-        console.log(picsLinks)
-    }
-
     return (
-        <div className='app'>
+        <BrowserRouter>
             <Header/>
-            <Main topics={topics} getPicLinks={fetchPicLinks} picsLinks={picsLinks}/>
-        </div>
+            <Routes>
+                <Route path='/' element={<Main/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
