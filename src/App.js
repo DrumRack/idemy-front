@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
     const [topics, setTopics] = useState([])
+    const [picsLinks, setPicLinks] = useState([])
     useEffect(() => {
         async function fetchTopics() {
             const topics = await DataService.getTopics()
@@ -14,15 +15,16 @@ function App() {
         fetchTopics()
     }, [])
 
-    async function fetchPicsList(topicName) {
-        const picsList = await DataService.getPicsList(topicName)
-        console.log(picsList)
+    async function fetchPicLinks(topicName) {
+        const picsLinks = await DataService.getPicLinks(topicName)
+        setPicLinks(picsLinks)
+        console.log(picsLinks)
     }
 
     return (
         <div className='app'>
             <Header/>
-            <Main topics={topics} getPicsList={fetchPicsList}/>
+            <Main topics={topics} getPicLinks={fetchPicLinks} picsLinks={picsLinks}/>
         </div>
     )
 }
