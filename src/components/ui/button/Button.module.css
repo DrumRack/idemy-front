@@ -1,20 +1,22 @@
 .button {
     --button-color: rgb(124, 29, 148);
+
     border: 2px solid var(--button-color);
     padding: 8px 12px;
     background: transparent;
     cursor: pointer;
+
+    & a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .button:hover {
     background: var(--button-color);
+    color: white;
+
     & a {
         color: white;
     }
-}
-
-
-.button a {
-    text-decoration: none;
-    color: black;
 }
