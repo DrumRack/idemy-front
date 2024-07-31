@@ -21,7 +21,10 @@ header {
     align-items: center;
     background: linear-gradient(to right, #64b3f4, #c2e59c);
     padding: 10px 20px;
-    border-bottom: solid 1px;
+}
+
+.logo {
+    cursor: pointer;
 }
 
 .header__main-nav {
