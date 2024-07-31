@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react'
 import DataService from '../API/DataService'
 import Content from '../components/shared/Content'
+import Modal from '../components/ui/Modal/Modal'
 
-function Main() {
+function Main({modalVisible, setModalVisible}) {
     const [topics, setTopics] = useState([])
     const [picsLinks, setPicLinks] = useState([])
     useEffect(() => {
@@ -16,11 +17,13 @@ function Main() {
     async function fetchPicLinks(topicName) {
         const picsLinks = await DataService.getPicLinks(topicName)
         setPicLinks(picsLinks)
-        console.log(picsLinks)
     }
 
     return (
         <div className='app'>
+            <Modal visible={modalVisible} setVisible={setModalVisible}>
+                <input type='file'/>
+            </Modal>
             <Content topics={topics} getPicLinks={fetchPicLinks} picsLinks={picsLinks}/>
         </div>
     )

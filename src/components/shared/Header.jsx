@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import Button from '../ui/button/Button'
 
-function Header() {
+function Header({setModalVisible}) {
     return (
         <header>
             <img src='https://csite.nicepage.com/Images/logo-w.png' alt='Logo'></img>
@@ -10,7 +10,7 @@ function Header() {
                     <Link to='/quiz'>Тест знаний</Link>
                 </Button>
                 <Button>Профиль</Button>
-                <Button>Загрузить картинку</Button>
+                <Button onClick={() => setModalVisible(true)}>Загрузить картинку</Button>
             </div>
         </header>
     )
