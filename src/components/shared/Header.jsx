@@ -1,16 +1,18 @@
 import {Link} from 'react-router-dom'
 import Button from '../ui/button/Button'
 
-function Header({setModalVisible}) {
+function Header() {
     return (
         <header>
-            <img src='https://csite.nicepage.com/Images/logo-w.png' alt='Logo'></img>
-            <div className='header_btns'>
+            {/* Поменять на useNavigate после изучения хука */}
+            <img src='https://csite.nicepage.com/Images/logo-w.png' onClick={() => window.location='/'} style={{cursor: 'pointer'}} alt='Logo'></img>
+            <nav className='header__main-nav'>
                 <Button>
                     <Link to='/quiz'>Тест знаний</Link>
                 </Button>
-                <Button>Профиль</Button>
-                <Button onClick={() => setModalVisible(true)}>Загрузить картинку</Button>
+            </nav>
+            <div className='header__auth'>
+                <span>Неавторизованный</span>
             </div>
         </header>
     )

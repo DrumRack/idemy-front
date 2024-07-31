@@ -24,7 +24,7 @@ function Main({modalVisible, setModalVisible}) {
             <Modal visible={modalVisible} setVisible={setModalVisible}>
                 <input type='file'/>
             </Modal>
-            <Content topics={topics} getPicLinks={fetchPicLinks} picsLinks={picsLinks}/>
+            <Content topics={topics} getPicLinks={fetchPicLinks} picsLinks={picsLinks} setModalVisible={setModalVisible}/>
         </div>
     )
 }

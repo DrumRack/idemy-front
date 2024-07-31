@@ -18,28 +18,49 @@ header {
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, #64b3f4 0%, #c2e59c);
-    padding: 20px;
+    align-items: center;
+    background: linear-gradient(to right, #64b3f4, #c2e59c);
+    padding: 10px 20px;
     border-bottom: solid 1px;
 }
 
-.header_btns {
-    display: flex;
-    justify-content: space-between;
+.header__main-nav {
+    flex-basis: 30%;
+}
+
+.header__auth {
     width: 18vw;
 }
 
 main {
     display: flex;
     margin-top: 25px;
+    height: 700px;
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
+.topic-nav {
+    width: 10%;
+    
+    & nav {
+        display: flex;
+        flex-direction: column;
+
+        & button {
+            margin: 0 3px 7px 0;
+        }
+    }
 }
 
 .content {
-    background-color: red;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 75%;
+}
+
+.load-button {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1%;
+    width: 15%;
 }

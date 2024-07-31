@@ -10,7 +10,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Header setModalVisible={setModalVisible}/>
+            <Header/>
             <Routes>
                 <Route path='/' element={<Main modalVisible={modalVisible} setModalVisible={setModalVisible}/>}/>
                 <Route path='/quiz' element={<Quiz/>}/>
