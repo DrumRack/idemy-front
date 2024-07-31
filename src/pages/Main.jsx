@@ -3,9 +3,11 @@ import DataService from '../API/DataService'
 import Content from '../components/shared/Content'
 import Modal from '../components/ui/Modal/Modal'
 
-function Main({modalVisible, setModalVisible}) {
+function Main() {
     const [topics, setTopics] = useState([])
     const [picsLinks, setPicLinks] = useState([])
+    const [modalVisible, setModalVisible] = useState(false)
+    
     useEffect(() => {
         async function fetchTopics() {
             const topics = await DataService.getTopics()
