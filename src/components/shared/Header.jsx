@@ -6,12 +6,14 @@ function Header() {
 
     return (
         <header>
-            <img
-                src='https://csite.nicepage.com/Images/logo-w.png'
-                className='logo'
-                onClick={() => navigate('/')}
-                alt='Logo'
-            />
+            <div className='header__logo'>
+                <img
+                    src='https://csite.nicepage.com/Images/logo-w.png'
+                    className='logo'
+                    onClick={() => navigate('/')}
+                    alt='Logo'
+                />
+            </div>
             <nav className='header__main-nav'>
                 <Button>
                     <Link to='/quiz'>Тест знаний</Link>

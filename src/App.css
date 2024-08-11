@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    border: red 1px solid;
 }
 
 #root {
@@ -14,35 +15,62 @@
     width: 1280px;
 }
 
+@media (max-width: 1280px) {
+    .app {
+        width: 100%;
+    }
+
+    .topic-nav {
+        padding: 0 10px;
+    }
+}
+
 header {
-    width: 100vw;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to right, #64b3f4, #c2e59c);
     padding: 10px 20px;
 }
 
+.header__logo, .header__main-nav {
+    flex-basis: 40%;
+}
+
+.header__auth {
+    flex-basis: 20%;
+}
+
 .logo {
     cursor: pointer;
 }
 
-.header__main-nav {
-    flex-basis: 30%;
-}
 
-.header__auth {
-    width: 18vw;
+@media (max-width: 756px) {
+    header {
+        padding: 10px;
+    }
+
+    .header__logo {
+        flex-basis: 15%;
+    }
+
+    .header__main-nav {
+        flex-basis: 25%;
+    }
 }
 
 main {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 25px;
     height: 700px;
 }
 
 .topic-nav {
-    width: 10%;
+    flex-basis: 10%;
     
     & nav {
         display: flex;
@@ -57,13 +85,17 @@ main {
 .content {
     display: flex;
     justify-content: center;
-    width: 75%;
+    flex-basis: 75%;
 }
+
+/* img {
+    width: 100%;
+} */
 
 .load-button {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding-top: 1%;
-    width: 15%;
+    flex-basis: 15%;
 }
