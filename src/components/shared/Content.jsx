@@ -15,7 +15,7 @@ function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
             </div>
             <div className='content'>
                 {picsLinks.length
-                    ? <img src={`http://95.163.242.46:8000/${picsLinks[0]}`} alt="Content image"/>
+                    ? <img src={`http://89.108.88.35:8000/${picsLinks[0]}`} alt="Content image"/>
                     : <div style={{display: 'flex', width: '60%', justifyContent: 'space-around', alignItems: 'center'}}>
                         {topics.map(topic =>
                             <Button onClick={() => getPicLinks(topic)} key={topic} style={{height: '50px', width: '100px'}}>

@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    border: red 1px solid;
+    /* border: red 1px solid; */
 }
 
 #root {
@@ -88,9 +88,10 @@ main {
     flex-basis: 75%;
 }
 
-/* img {
-    width: 100%;
-} */
+img {
+    object-fit: cover;
+    object-position: bottom;
+}
 
 .load-button {
     display: flex;
