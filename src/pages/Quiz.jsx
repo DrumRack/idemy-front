@@ -1,6 +1,6 @@
 function Quiz() {
     return (
-        <main>
+        <main className='app'>
             <h1>Quiz</h1>
         </main>
     )

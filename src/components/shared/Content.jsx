@@ -3,8 +3,7 @@ import Button from '../ui/button/Button'
 function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
     return (
         <main>
-            <div className='topic-nav'>
-                {picsLinks.length
+            {picsLinks.length
                 ? <nav>
                     {topics.map(topic =>
                         <Button onClick={() => getPicLinks(topic)} key={topic}>
@@ -12,20 +11,21 @@ function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
                         </Button>)}
                 </nav>
                 : <nav></nav>}
-            </div>
-            <div className='content'>
+            <div className='main__content'>
                 {picsLinks.length
                     ? <img src={`http://89.108.88.35:8000/${picsLinks[0]}`} alt="Content image"/>
-                    : <div style={{display: 'flex', width: '60%', justifyContent: 'space-around', alignItems: 'center'}}>
+                    : <div>
                         {topics.map(topic =>
-                            <Button onClick={() => getPicLinks(topic)} key={topic} style={{height: '50px', width: '100px'}}>
+                            <Button onClick={() => getPicLinks(topic)} key={topic}>
                                 {topic}
                             </Button>)}
                     </div>}
             </div>
-            <div className='load-button'>
-                <Button onClick={() => setModalVisible(true)}>Загрузить картинку</Button>
-            </div>
+            {picsLinks.length
+                ? <div className='main__load-button'>
+                    <Button onClick={() => setModalVisible(true)}>Загрузить картинку</Button>
+                </div>
+                : <div></div>}
         </main>
     )
 }

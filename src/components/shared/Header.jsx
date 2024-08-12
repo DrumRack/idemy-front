@@ -9,7 +9,6 @@ function Header() {
             <div className='header__logo'>
                 <img
                     src='https://csite.nicepage.com/Images/logo-w.png'
-                    className='logo'
                     onClick={() => navigate('/')}
                     alt='Logo'
                 />
