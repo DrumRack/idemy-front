@@ -57,6 +57,21 @@ main nav {
 }
 
 .main__load-button button{
-    margin: 0 5px 7px;
+    margin: 0 5px;
     white-space: wrap;
+}
+
+@media (max-width: 576px) {
+    main {
+        flex-direction: column;
+    }
+
+    main nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .main__load-button button{
+        display: none;
+    }
 }
