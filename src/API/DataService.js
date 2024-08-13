@@ -1,13 +1,17 @@
 import axios from 'axios'
+import config from '../config.json'
+
+const URL = config.url
+const PORT = config.port
 
 class DataService {
     static async getTopics() {
-        const response = await axios.get('http://89.108.88.35:8000/get_topics')
+        const response = await axios.get(`${URL}:${PORT}/get_topics`)
         return response.data
     }
 
     static async getPicLinks(topic) {
-        const response = await axios.get(`http://89.108.88.35:8000/get_topic/${topic}`)
+        const response = await axios.get(`${URL}:${PORT}/get_topic/${topic}`)
         return response.data
     }
 }

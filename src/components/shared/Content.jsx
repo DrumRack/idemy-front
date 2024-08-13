@@ -1,4 +1,8 @@
 import Button from '../ui/button/Button'
+import config from '../../config.json'
+
+const URL = config.url
+const PORT = config.port
 
 function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
     return (
@@ -13,7 +17,7 @@ function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
                 : <nav></nav>}
             <div className='main__content'>
                 {picsLinks.length
-                    ? <img src={`http://89.108.88.35:8000/${picsLinks[0]}`} alt="Content image"/>
+                    ? <img src={`${URL}:${PORT}/${picsLinks[0]}`} alt="Content image"/>
                     : <div>
                         {topics.map(topic =>
                             <Button onClick={() => getPicLinks(topic)} key={topic}>
