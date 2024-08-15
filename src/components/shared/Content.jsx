@@ -1,5 +1,5 @@
 import Button from '../ui/button/Button'
-import config from '../../config.json'
+import config from '../../config'
 
 const URL = config.url
 const PORT = config.port
