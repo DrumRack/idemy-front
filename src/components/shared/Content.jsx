@@ -1,26 +1,17 @@
-import Button from '../ui/button/Button'
+import TopicNav from './TopicNav'
 import ImageViewer from './ImageViewer'
+import Button from '../ui/button/Button'
 
 function Content({topics, totalImages, getPicLinks, picsLinks, setModalVisible}) {
     return (
         <main>
             {picsLinks.length
-                ? <nav>
-                    {topics.map(topic =>
-                        <Button onClick={() => getPicLinks(topic)} key={topic}>
-                            {topic}
-                        </Button>)}
-                </nav>
+                ? <TopicNav topics={topics} getPicLinks={getPicLinks}/>
                 : <nav></nav>}
             <div className='main__content'>
                 {picsLinks.length
                     ? <ImageViewer totalImages={totalImages} picsLinks={picsLinks}/>
-                    : <div>
-                        {topics.map(topic =>
-                            <Button onClick={() => getPicLinks(topic)} key={topic}>
-                                {topic}
-                            </Button>)}
-                    </div>}
+                    : <TopicNav topics={topics} getPicLinks={getPicLinks}/>}
             </div>
             {picsLinks.length
                 ? <div className='main__load-button'>
