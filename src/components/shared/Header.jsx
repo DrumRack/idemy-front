@@ -7,11 +7,7 @@ function Header() {
     return (
         <header>
             <div className='header__logo'>
-                <img
-                    src='https://csite.nicepage.com/Images/logo-w.png'
-                    onClick={() => navigate('/')}
-                    alt='Logo'
-                />
+                <img src='https://csite.nicepage.com/Images/logo-w.png' onClick={() => navigate('/')} alt='Logo'/>
             </div>
             <nav className='header__main-nav'>
                 <Button>

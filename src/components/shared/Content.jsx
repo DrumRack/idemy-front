@@ -1,10 +1,7 @@
 import Button from '../ui/button/Button'
-import config from '../../config'
+import ImageViewer from './ImageViewer'
 
-const URL = config.url
-const PORT = config.port
-
-function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
+function Content({topics, totalImages, getPicLinks, picsLinks, setModalVisible}) {
     return (
         <main>
             {picsLinks.length
@@ -17,7 +14,7 @@ function Content({topics, getPicLinks, picsLinks, setModalVisible}) {
                 : <nav></nav>}
             <div className='main__content'>
                 {picsLinks.length
-                    ? <img src={`${URL}:${PORT}/${picsLinks[0]}`} alt="Content image"/>
+                    ? <ImageViewer totalImages={totalImages} picsLinks={picsLinks}/>
                     : <div>
                         {topics.map(topic =>
                             <Button onClick={() => getPicLinks(topic)} key={topic}>

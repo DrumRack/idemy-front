@@ -6,6 +6,7 @@ import Modal from '../components/ui/Modal/Modal'
 function Main() {
     const [topics, setTopics] = useState([])
     const [picsLinks, setPicLinks] = useState([])
+    const [totalImages, setTotalImages] = useState(0)
     const [modalVisible, setModalVisible] = useState(false)
     
     useEffect(() => {
@@ -16,9 +17,10 @@ function Main() {
         fetchTopics()
     }, [])
 
-    async function fetchPicLinks(topicName) {
-        const picsLinks = await DataService.getPicLinks(topicName)
-        setPicLinks(picsLinks)
+    async function fetchImages(topicName) {
+        const response = await DataService.getPicLinks(topicName)
+        setTotalImages(response.headers['x-total-count'])
+        setPicLinks(response.data)
     }
 
     return (
@@ -26,7 +28,7 @@ function Main() {
             <Modal visible={modalVisible} setVisible={setModalVisible}>
                 <input type='file'/>
             </Modal>
-            <Content topics={topics} getPicLinks={fetchPicLinks} picsLinks={picsLinks} setModalVisible={setModalVisible}/>
+            <Content topics={topics} totalImages={totalImages} getPicLinks={fetchImages} picsLinks={picsLinks} setModalVisible={setModalVisible}/>
         </div>
     )
 }
