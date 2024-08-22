@@ -1,10 +1,10 @@
 import Button from '../ui/button/Button'
 
-function TopicNav({topics, getPicLinks}) {
+function TopicNav({topics, getImageLinks}) {
     return (
         <nav>
             {topics.map(topic =>
-                <Button onClick={() => getPicLinks(topic)} key={topic}>
+                <Button onClick={() => getImageLinks(topic)} key={topic}>
                     {topic}
                 </Button>)}
         </nav>

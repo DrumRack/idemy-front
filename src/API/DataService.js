@@ -10,7 +10,7 @@ class DataService {
         return response.data
     }
 
-    static async getPicLinks(topic) {
+    static async getImageLinks(topic) {
         const response = await axios.get(`${URL}:${PORT}/get_topic/${topic}`)
         return response
     }

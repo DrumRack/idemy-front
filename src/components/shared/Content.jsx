@@ -2,18 +2,18 @@ import TopicNav from './TopicNav'
 import ImageViewer from './ImageViewer'
 import Button from '../ui/button/Button'
 
-function Content({topics, totalImages, getPicLinks, picsLinks, setModalVisible}) {
+function Content({topics, totalImages, getImageLinks, imageLinks, setModalVisible}) {
     return (
         <main>
-            {picsLinks.length
-                ? <TopicNav topics={topics} getPicLinks={getPicLinks}/>
+            {imageLinks.length
+                ? <TopicNav topics={topics} getImageLinks={getImageLinks}/>
                 : <nav></nav>}
             <div className='main__content'>
-                {picsLinks.length
-                    ? <ImageViewer totalImages={totalImages} picsLinks={picsLinks}/>
-                    : <TopicNav topics={topics} getPicLinks={getPicLinks}/>}
+                {imageLinks.length
+                    ? <ImageViewer totalImages={totalImages} imageLinks={imageLinks}/>
+                    : <TopicNav topics={topics} getImageLinks={getImageLinks}/>}
             </div>
-            {picsLinks.length
+            {imageLinks.length
                 ? <div className='main__load-button'>
                     <Button onClick={() => setModalVisible(true)}>Загрузить картинку</Button>
                 </div>

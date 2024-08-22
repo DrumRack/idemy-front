@@ -5,7 +5,7 @@ import config from '../../config'
 const URL = config.url
 const PORT = config.port
 
-function ImageViewer({totalImages, picsLinks}) {
+function ImageViewer({totalImages, imageLinks}) {
     const [image, setImage] = useState(0)
 
     function changeImage(page) {
@@ -14,7 +14,7 @@ function ImageViewer({totalImages, picsLinks}) {
 
     return (
         <div>
-            <img src={`${URL}:${PORT}/${picsLinks[image]}`} alt="Content image"/>
+            <img src={`${URL}:${PORT}/${imageLinks[image]}`} alt="Content image"/>
             <Pagination totalImages={totalImages} changeImage={changeImage}/>
         </div>
     )
