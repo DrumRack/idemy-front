@@ -53,14 +53,9 @@ main nav {
     }
 }
 
-/* .image-viewer {
-    max-width: 100%;
-    max-height: 83vh;
-} */
-
 .main__content img{
     max-width: 100%;
-    /* max-height: 83vh; */
+    max-height: 83vh;
 }
 
 .page-wrapper {
