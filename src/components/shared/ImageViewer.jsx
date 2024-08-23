@@ -13,9 +13,9 @@ function ImageViewer({totalImages, imageLinks}) {
     }
 
     return (
-        <div>
+        <div className='image-viewer'>
             <img src={`${URL}:${PORT}/${imageLinks[image]}`} alt="Content image"/>
-            <Pagination totalImages={totalImages} changeImage={changeImage}/>
+            <Pagination totalImages={totalImages} image={image} changeImage={changeImage}/>
         </div>
     )
 }

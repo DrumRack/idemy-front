@@ -1,19 +1,21 @@
-function Pagination({totalImages, changeImage}) {
+function Pagination({totalImages, image, changeImage}) {
     
-    function getArrayNumbers(totalImages) {
+    function generatePageNumbers(totalImages) {
         const result = []
         for (let i = 0; i < totalImages; i++) result.push(i + 1)
         return result
     }
 
-    const pagesArray = getArrayNumbers(totalImages)
+    const pagesArray = generatePageNumbers(totalImages)
 
     return (
         <div className='page-wrapper'>
+            <span className='page'>Предыдущая</span>
             {pagesArray.map(pageNum =>
-                <span onClick={() => changeImage(pageNum - 1)} className='page' key={pageNum}>
+                <span onClick={() => changeImage(pageNum - 1)} className={pageNum - 1 === image ? 'page current-page' : 'page'} key={pageNum}>
                     {pageNum}
                 </span>)}
+            <span className='page'>Следующая</span>
         </div>
     )
 }

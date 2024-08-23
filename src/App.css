@@ -53,8 +53,14 @@ main nav {
     }
 }
 
+/* .image-viewer {
+    max-width: 100%;
+    max-height: 83vh;
+} */
+
 .main__content img{
     max-width: 100%;
+    /* max-height: 83vh; */
 }
 
 .page-wrapper {
@@ -68,6 +74,11 @@ main nav {
     padding: 1px 5px;
     margin: 0 1px;
     cursor: pointer;
+}
+
+.current-page {
+    border: 2px solid orange;
+    font-weight: bold;
 }
 
 .main__load-button button{
