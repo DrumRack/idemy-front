@@ -10,12 +10,12 @@ function Pagination({totalImages, image, changeImage}) {
 
     return (
         <div className='page-wrapper'>
-            <span className='page'>Предыдущая</span>
+            <span onClick={() => changeImage(image - 1)} className='page'>Предыдущая</span>
             {pagesArray.map(pageNum =>
                 <span onClick={() => changeImage(pageNum - 1)} className={pageNum - 1 === image ? 'page current-page' : 'page'} key={pageNum}>
                     {pageNum}
                 </span>)}
-            <span className='page'>Следующая</span>
+            <span onClick={() => changeImage(image + 1)} className='page'>Следующая</span>
         </div>
     )
 }
