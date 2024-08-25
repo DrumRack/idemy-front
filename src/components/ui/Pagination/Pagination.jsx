@@ -9,7 +9,7 @@ function Pagination({totalImages, image, changeImage}) {
     const pagesArray = generatePageNumbers(totalImages)
 
     return (
-        <div className='page-wrapper'>
+        <div className='pagination'>
             <span onClick={() => changeImage(image - 1)} className='page'>Предыдущая</span>
             {pagesArray.map(pageNum =>
                 <span onClick={() => changeImage(pageNum - 1)} className={pageNum - 1 === image ? 'page current-page' : 'page'} key={pageNum}>

@@ -53,12 +53,17 @@ main nav {
     }
 }
 
+.image-viewer {
+    display: flex;
+    flex-flow: column;
+}
+
 .main__content img{
     max-width: 100%;
     max-height: 83vh;
 }
 
-.page-wrapper {
+.pagination {
     display: flex;
     justify-content: center;
     margin: 20px 0;
