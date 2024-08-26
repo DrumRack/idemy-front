@@ -33,14 +33,16 @@ function Main() {
     function fileUpload(event) {
         event.preventDefault()
         const formData = new FormData()
-        formData.append('image', file)
+        formData.append('file', file)
 
         axios.post('http://89.108.88.35:8000/upload', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
-                'accept': 'application/json'
+                'Accept': 'application/json'
             }
         })
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
     }
 
     return (
