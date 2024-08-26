@@ -1,6 +1,6 @@
 import cl from './Modal.module.css'
 
-function Modal({children, visible, setVisible}) {
+function Modal({children, visible, setVisible, style}) {
     const cls = [cl.modalLayer]
 
     if (visible) cls.push(cl.active)
