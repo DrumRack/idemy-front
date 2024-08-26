@@ -56,7 +56,7 @@ main nav {
 .image-viewer {
     display: flex;
     flex-flow: column;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .image-viewer img {
