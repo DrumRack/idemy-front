@@ -1,4 +1,3 @@
-import axios from 'axios'
 import {useEffect, useState} from 'react'
 import DataService from '../API/DataService'
 import Content from '../components/shared/Content'
@@ -34,15 +33,7 @@ function Main() {
         event.preventDefault()
         const formData = new FormData()
         formData.append('file', file)
-
-        axios.post('http://89.108.88.35:8000/upload', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
+        DataService.uploadImage(formData)
     }
 
     return (
